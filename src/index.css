@@ -1,0 +1,92 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-paper: var(--paper);
+  --color-card: var(--card);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-field: var(--field);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-on-accent: var(--on-accent);
+  --color-warn: var(--warn);
+  --color-warn-soft: var(--warn-soft);
+  --color-series-1: var(--series-1);
+  --color-series-2: var(--series-2);
+  --color-series-3: var(--series-3);
+  --color-series-4: var(--series-4);
+  --color-series-5: var(--series-5);
+  --font-sans: 'Inter Variable', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-display: var(--font-sans);
+}
+
+/* Monochrome by design: ink is the accent. Color is reserved for warnings and chart series. */
+:root {
+  --paper: #fafafa;
+  --card: #ffffff;
+  --ink: #0f0f0f;
+  --muted: #666666;
+  --line: #e7e7e7;
+  --field: #949494;
+  --accent: #0f0f0f;
+  --accent-soft: #f2f2f2;
+  --on-accent: #ffffff;
+  --warn: #a8480a;
+  --warn-soft: #fdf1e3;
+  --series-1: #2a78d6;
+  --series-2: #eb6834;
+  --series-3: #1baf7a;
+  --series-4: #eda100;
+  --series-5: #e87ba4;
+  color-scheme: light;
+}
+
+:root[data-theme='dark'] {
+  --paper: #0c0c0c;
+  --card: #151515;
+  --ink: #f3f3f3;
+  --muted: #a3a3a3;
+  --line: #272727;
+  --field: #6e6e6e;
+  --accent: #f3f3f3;
+  --accent-soft: #212121;
+  --on-accent: #0c0c0c;
+  --warn: #f2b06a;
+  --warn-soft: #2a1e10;
+  --series-1: #3987e5;
+  --series-2: #d95926;
+  --series-3: #199e70;
+  --series-4: #c98500;
+  --series-5: #d55181;
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-feature-settings: 'cv11', 'ss03';
+  letter-spacing: -0.006em;
+  -webkit-font-smoothing: antialiased;
+}
+
+.num {
+  font-variant-numeric: tabular-nums;
+}
+
+:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 2px;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}
